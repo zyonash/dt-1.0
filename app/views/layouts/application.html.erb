@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Dormtown - The college experience.</title>
+<%= stylesheet_link_tag "style" %>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<div id="header">
+<ul>
+<li><strong>Dormtown</strong></li>
+<li>About</li>
+<li>Contact</li>
+<li>FAQ</li>
+<li>Suggestions</li>
+<% if user_signed_in? %>
+<li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
+<% else %>
+<li><%= link_to 'Login', new_user_session_path %></li>
+<% end %>
+<% if user_signed_in? %>
+<li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+<% else %>
+<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+<% end %>
+</ul>
+</div>
+
+<!--
+<div id="top_nav">
+
+<h1 id="school_name">Harvard University</h1>
+
+
+<ul id="section_nav">
+<li><strong><a href="/events">Events</a></strong></li>
+<li><a href="/notices">Notices</a></li>
+<li><a href="">Jobs</a></li>
+<li>Housing</li>
+<li>Marketplace</li>
+</ul>
+</div>
+-->
+
+<%= yield %>
+
+</body>
+</html>

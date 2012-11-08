@@ -1,0 +1,426 @@
+body {
+	font-family:  "Myriad Pro", Helvetica, "Helvetica Neue";
+	color: #222;
+	background-color: #fff;
+	background: url("background_grid.gif");
+	background: repeat;
+	height: 100%;
+
+}
+
+
+#content {
+	width: 900px;
+	height: 40em;
+	margin: 0 auto 0 auto;	
+	padding: 0 3em 0 3em;
+	/*border-left: 3px solid #e0e0e0;
+	border-right: 3px solid #e0e0e0;*/
+
+}
+
+#content a:link, #content a:visited {
+	text-decoration: none;
+}
+
+#content a:link, #content a:visited {
+	text-decoration: none;
+	color: #333;
+}
+
+#content a:hover {
+	text-decoration: underline;	
+}
+
+/*BEGIN HEADER - THE PART WITH LOGO, FAQ, LOGIN, ETC*/
+#header {
+	margin: 0em 1em 3em 1em;
+	padding: 1em 8.5em 0em 8em;
+
+}
+
+#header #account {
+	float: right;
+}
+
+#header ul {
+	list-style-type: none;
+	text-align: center;
+
+}
+#header img {
+	padding: 1em 1em 1em 2em;
+}
+
+#header ul li {
+		display: block;
+		float: left;
+		
+		padding: 0em 0.5em 0.5em 0.5em;
+}
+
+#header a:link {
+		color: #222;
+		text-decoration: none;
+}
+
+#header a:hover {
+		color: #999;
+}
+/*END HEADER - THE PART WITH LOGO, FAQ, LOGIN, ETC*/
+
+/*BEGIN TOP_NAV - THE PART WITH THE SCHOOL NAME AND SECTIONS*/
+
+#top_nav {
+	border-top: 7px solid #222;
+	border-bottom: 7px solid #222;
+	padding-top: 0;
+	padding-bottom: 3em;
+	margin: 0 auto 0 auto;
+
+
+
+
+}
+
+.current {
+	font-weight: bold;
+}
+
+#top_nav h1 {
+
+	text-transform: uppercase;
+	letter-spacing: 0em;
+	text-align: center;
+	line-height: 0.8em;
+	width: 900px;
+	padding: 0.6em 0em 0.4em 0em;
+	margin: 0 auto 0 auto;
+}
+
+
+#school_name {
+	font-size: 3.9em;
+}
+
+/*BEGIN SECTION_NAV - THE PART WITH THE LINKS TO EVENTS, NOTICES, ETC.*/
+
+#section_nav {
+	font-size: 2em;
+	width: 25em;
+	padding: 0 0 0 0;
+	margin: 0em 0 0.4em 0;
+	text-align: center;
+	
+}
+
+#section_nav {
+	list-style-type: none;
+	
+}
+
+#section_nav li {
+		display: block;
+		float: left;
+
+		padding: 0.2em 0.7em 0.5em 0.7em;
+		
+}
+
+#section_nav a:link, #section_nav a:visited {
+		color: #222;
+		text-decoration: none;
+}
+
+#section_nav a:hover {
+		color: #222;
+		text-decoration: underline;
+}
+
+/*END SECTION_NAV - THE PART WITH THE LINKS TO EVENTS, NOTICES, ETC.*/
+/*END TOP_NAV - THE PART WITH THE SCHOOL NAME AND SECTIONS*/
+
+
+/*BEGIN BOTTOM PART - LISTINGS, CREATE BUTTON, SEARCH, BROWSE*/
+/*BEGIN BUTTONS AND SEARCH*/
+#info {
+
+margin: 0em 0 0 0;
+padding: 1em 0 0 0;
+
+}
+
+#create_button {
+		font-weight: bold;
+		padding: 0.5em 0.7em 0.5em 0.7em;	
+		background-color: #B5215D;
+		color: #efefef;
+		border-radius: 3px;
+		float: right;
+		width: 120px;
+	        margin-right: 1em;	
+
+
+	}
+
+a:hover #create_button  {
+	background-color: #751541;
+}
+
+#search {
+	float: right;
+	clear: right;
+	padding-top: 1em;
+	margin: 1em 1em 0 0;
+		width: 140px;
+
+}
+
+#browse {
+	float: right;
+
+
+}
+/*END BUTTONS AND SEARCH*/
+
+
+
+.row_white {
+	background-color: #fff;
+}
+
+.row_gray  {
+	background-color: #222;
+}
+
+
+#events_row_wrapper {
+	margin: 0 0 0 0;
+	float: left;
+	border-radius: 3px;
+	clear: left;
+
+}
+
+#events_row_wrapper div {
+	display: inline;
+}
+
+
+.events_row_name {
+	width: 40em;
+
+	float: left;
+
+}
+
+.events_row_location {
+
+	float: right;
+}
+
+.events_row_datetime {
+
+
+	float: right;
+}
+
+/*NOTICES*/
+#notices_nav {
+	margin: -1.5em 0 0 -2em ;
+	font-size: 1.2em;
+}
+
+#notices_nav li {
+	list-style-type: none;
+	display: inline;
+	padding-right: 1.5em;	
+
+}
+/*END NOTICES*/
+
+/*EVENTS*/
+#events_section_nav {
+	margin-left: -0.7em;
+
+}
+/*END EVENTS*/
+
+/*MARKETPLACE*/
+
+
+#marketplace_nav_buysell, #marketplace_nav_borrow, #marketplace_nav_services {
+	float: left;
+	margin: -1.5em 1.5em 0 -2em ;
+
+
+}
+
+#marketplace_nav_buysell li, #marketplace_nav_borrow li, #marketplace_nav_services li {
+	margin: 0.25em 1em 0.25em 0;
+	list-style-type: none;
+
+}
+	
+#marketplace_listings {
+	height: 30em;
+	width: 45em;
+	background-color: #e0e0e0;
+	clear: all;
+	margin-top: 13em;
+}
+
+.nav_header {
+	font-size: 1.2em;
+}
+/*END MARKETPLACE*/
+
+/* HOUSING */
+
+
+
+#housing_nav {
+	margin: -1.5em 0 0 -2em ;
+	font-size: 1.2em;
+}
+
+#housing_nav li {
+	list-style-type: none;
+	display: inline;
+	padding-right: 1.5em;	
+
+}
+
+
+
+
+/* END HOUSING */
+
+/* JOBS */
+#jobs_listings {
+	height: 30em;
+	width: 45em;
+	background-color: #e0e0e0;
+	clear: all;
+	margin-top: 5em;
+}
+
+/*END JOBS */
+
+/*END LISTINGS*/
+/*END BOTTOM PART - LISTINGS, CREATE BUTTON, SEARCH, BROWSE*/
+
+
+/*BEGIN LISTINGS*/
+#events_listing_wrapper {
+        margin: -3.5em 0 0 -2em;
+        float: left;
+        border: 0px;
+        border-radius: 3px;
+}
+
+#events_listing_wrapper .events_listing_header {
+        font-weight: bold;
+        font-size: 1.2em;
+        text-align: left;
+        border-right: 0px;
+}
+
+#events_listing_name li, #events_listing_location li, #events_listing_time li {
+        list-style-type: none;
+        padding: 0.5em;
+        
+}
+
+#events_listing_time li {
+        border-right: 0px;
+}
+
+#events_listing_name {
+        padding-top: 0em;
+        width: 29em;
+        float: left;
+}
+
+#events_listing_location {
+        margin-left: -2.45em;
+        padding-top: 0em;
+        width: 14em;
+        float: left;
+}
+
+#events_listing_time {
+        margin-left: -2.49em;
+        padding-top: 0em;
+        width: 8em;
+        float: left;
+}
+
+
+.listing_gray {
+        background-color: #eee;
+        color: #222;
+}
+
+
+
+
+/*NEWSERS*/
+
+
+.row {
+	width: 41em;
+	clear: all;
+	display: block;
+	padding: -0.5em 1em -0.5em 1em;
+	border-bottom: 1px solid #eee;
+	margin: -1.25em 0em -1.25em 0em;
+}
+
+.row a:link {
+	text-decoration: none;
+}
+
+.row a:hover {
+	text-decoration: none;
+
+}
+
+.event_name {
+
+	float: left;	
+	padding-right: 0.5em;
+	display: inline;
+	font-weight: bold;
+}
+
+.at {
+	padding-right: 0.3em;
+}
+
+.event_location {
+
+	display: inline;	
+}
+
+.event_time {
+	
+	float: right;	
+	display: inline;	
+}	
+.event_date {
+		
+	
+	display: inline;	
+}
+
+
+/* EVENT CREATION SECTION */
+.event_label {
+		
+	display: inline;
+	margin: 0 2em 0 0;
+	font-weight: bold;
+}
+
+

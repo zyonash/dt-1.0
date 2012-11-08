@@ -1,0 +1,56 @@
+<div id="content">
+<div id="top_nav">
+<%= image_tag("pitt.jpg", :size => "900x303") %>
+<!--<h1 id="school_name">Harvard University</h1>-->
+
+
+<ul id="section_nav">
+<li><strong><a href="/events">Events</a></strong></li>
+<li><a href="/notices">Notices</a></li>
+<li><a href="">Jobs</a></li>
+<li>Housing</li>
+<li>Marketplace</li>
+</ul>
+</div>
+
+<div id="info">
+<a href="/events/new"><span id="create_button">Create a new event</span></a>
+<span>
+<form>
+<input id="search" type="text" name="search" ><br>
+</form>
+</span>
+
+<div id="events_listing_wrapper">
+	
+	
+
+<div id="events_listing_name">
+	
+	<%= paginate @events %>
+	<% @events.each do |event| %>
+	<% if event.eventdate.strftime("%m/%d") == Time.now.tomorrow.strftime("%m/%d") %>
+	<ul>
+		
+		<li class="row">
+		<span class="event_name"><%= link_to event.name, event%></span>
+		<span class="at">at</span>
+		<span class="event_location"><%= event.location %></span>
+		<span class="event_date"><%= event.eventdate.strftime("%m/%d") %></span>
+		<span class="event_time"><%= event.eventtime.strftime("at %I:%M%p") %></span>
+		</li>			
+	</ul>
+	<% end %>
+	<% end %>
+	
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+</div>

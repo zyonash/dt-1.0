@@ -1,0 +1,47 @@
+<div id="header">
+<ul>
+<li><strong>Dormtown</strong></li>
+<li>About</li>
+<li>Contact</li>
+<li>FAQ</li>
+<li>Suggestions</li>
+<li id="account"><strong>KES100@PITT.EDU</strong> </li>
+</ul>
+</div>
+
+<div id="content">
+<div id="top_nav">
+<h1 id="school_name">Harvard University</h1>
+
+
+<ul id="section_nav">
+<li><strong><a href="/events">Events</a></strong></li>
+<li><a href="/notices">Notices</a></li>
+<li><a href="">Jobs</a></li>
+<li>Housing</li>
+<li>Marketplace</li>
+</ul>
+</div>
+
+
+<div id="info">
+<a href="/new"><span id="create_button">Create a new event</span></a>
+<span id="search">
+<form>
+<input type="text" name="search"><br>
+</form>
+</span>
+</div>
+
+
+<div id="event_creation_form">
+	<h2>Create a new event</h2>
+</div>
+
+<%= render 'form' %>
+<br>
+<%= link_to 'Back to Events Page', events_path %>
+
+
+</div>
+</div>
