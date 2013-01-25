@@ -1,24 +1,49 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+		
+		
+		<div id="section_nav">
+		  <ul>
+			<li class="current">Events</li>
+			<li>Notices</li>
+		  </ul>
+		</div>
+		
+		<div id="events_nav">
+		  <ul>	
+			<li> <a href="/events">Today</a></li>
+			<li><a href="/events/tomorrow">Tomorrow</a></li>
+			<li><a href="/events/popular">Popular</a></li>		
+			<li><a href="/events/recent">Recently Added</a></li>	
+		  </ul>
+		</div>
+		
 
-<p>
-  <b>Location:</b>
-  <%= @event.location %>
-</p>
+		<div id="events_info">
+			<h2 id="events_info_title">Spanish Club Meeting - First of the year!</h2>
+			<div id="events_info_datetime">January 1, 2013</div>
+			<div id="events_info_location">202 Cathedral of Learning</div>
 
-<p>
-  <b>Date:</b>
-  <%= @event.eventdate %>
-</p>
-<p>
-  <b>Time:</b>
-  <%= @event.eventtime %>
-</p>
+			<p id="description">Buenos dias! Come on down to the Cathedral for free tacos and salsa! We'll be introducing ourselves, our events, and everything that Spanish club is about. No habla Espanol? No problemo! </p>
+		
+		 <div id="events_info_bottom">	  
+			<div id="events_info_freefood"><strong>Free food?</strong> Yes</div>
+	        <div id="events_info_invited"><strong>Who's invited?</strong> Everyone!</strong></div>
+			<div id="events_info_postedat"><strong>This event is viewable by:</strong> Pitt, CMU, Chatham</div>
+		 </div>	
+
+						
+		</div>
+		
+		<div id="events_info_sidebar">
+		  <div id="rsvp_button">RSVP Button</div>
+		  <div id="share_buttons">Share buttons</div>
+		  <div id="map">Location of event on map</div>
+		  
+		</div>
+	
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</div>
+
+</body>
+</html>

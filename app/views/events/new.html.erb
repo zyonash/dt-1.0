@@ -1,47 +1,25 @@
-<div id="header">
-<ul>
-<li><strong>Dormtown</strong></li>
-<li>About</li>
-<li>Contact</li>
-<li>FAQ</li>
-<li>Suggestions</li>
-<li id="account"><strong>KES100@PITT.EDU</strong> </li>
-</ul>
+<div id="section_nav">
+  <ul>
+    <li class="current">Events</li>
+    <li>Notices</li>
+  </ul>
 </div>
-
-<div id="content">
-<div id="top_nav">
-<h1 id="school_name">Harvard University</h1>
-
-
-<ul id="section_nav">
-<li><strong><a href="/events">Events</a></strong></li>
-<li><a href="/notices">Notices</a></li>
-<li><a href="">Jobs</a></li>
-<li>Housing</li>
-<li>Marketplace</li>
-</ul>
+<div id="events_nav">
+  <ul>	
+    <li> <a href="/events">Today</a></li>
+    <li><a href="/events/tomorrow">Tomorrow</a></li>
+    <li><a href="events_popular.html">Popular</a></li>		
+    <li><a href="events_recent.html">Recently Added</a></li>	
+  </ul>
 </div>
-
-
-<div id="info">
-<a href="/new"><span id="create_button">Create a new event</span></a>
-<span id="search">
-<form>
-<input type="text" name="search"><br>
-</form>
-</span>
-</div>
-
-
-<div id="event_creation_form">
-	<h2>Create a new event</h2>
-</div>
-
+<div id="new_event">
 <%= render 'form' %>
-<br>
-<%= link_to 'Back to Events Page', events_path %>
-
-
+</div>
+<div id="back_to_events">
+<%= link_to 'Back to Events', events_path %>
 </div>
 </div>
+<div id="footer">Footer</div>
+</div>
+
+

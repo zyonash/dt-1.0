@@ -1,9 +1,15 @@
 Dt10::Application.routes.draw do
+  resources :notices
+
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+ 
+  resources :events do
+    collection do
+      get 'tomorrow'
+    end
+  end 
 
-  resources :events
-
-  get "home/index"
+  get "home/index"    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

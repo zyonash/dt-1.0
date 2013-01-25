@@ -1,54 +1,60 @@
-<h2>Text</h2>
+
+    <div id="header">
+    	
+    <%= form_for("user", :url => user_session_path) do |f| %>
+    <%= f.label :email %> 
+    <%= f.text_field :email , :size=>'15',:maxlength=>'32' %> <br/>
+    <%= f.label :password %> 
+    <%= f.password_field :password , :size=>'15', :maxlength=>'32' %> 
+    <%= f.submit "Sign in"%>
+    <% end %>
+    </div>
+<div id="content">
+  <div id="welcome_message">
+	<p>Welcome to Dormtown</p>
+  </div>
+<div id="tagline">
+	<p>Join the college experience</p>
+</div>
+ 
+
+<div id="signup">
+  <h3>Students, faculty and staff</h3>
+  <span id="school_search">
+    <form><input id="search_bar" type="text" name="search" placeholder="Find your school"></form>
+  </span>
+</div>
+
+<div id="employers">
+  <h3>Employers</h3>
+  <p><a href="">Post a job ad at over 100 schools.</a></p>
+</div>
+
+
+
+<div id="signup">
+<%= form_for("user", :url => user_registration_path) do |f| %>
+  
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+</div>	
 
 
 
 
 
+<div id="footer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-
-
-
-
-	
-
-
-
-	
-
-
-
-
-
-
-
+</div>
 
