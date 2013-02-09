@@ -1,38 +1,36 @@
-<div id="section_nav">
-  <ul>
-    <li class="current">Events</li>
-    <li>Notices</li>
-  </ul>
-</div>
-<div id="events_nav">
-  <ul>
-    <li class="current" ><a href="">Today</a></li>
-    <li><a href="events/tomorrow">Tomorrow</a></li>
-    <li><a href="events/popular">Popular</a></li>		
-    <li><a href="events/recent">Recently Added</a></li>
-  </ul>
-</div>
-<div class="event_listings_container">
-<div class="event_listings">
-<ul>
-<%= paginate @events %>
-<% @events.each do |event| %>
-      <% if event.eventdate.strftime("%m/%d/%Y") == Date.today.strftime("%m/%d/%Y") %>      
-      <li>
-      <a href="">
-        <span class="event_name"><%= event.name %></span>
-        <span class="event_location"><%= "at "+event.location %></span>
-	<span class="event_datetime"><%= event.eventtime.strftime("%I:%M%p") %></span>
-      
-      </a>
-      </li>
-      <% end %>
-<% end %>
-</ul>
-</div>
-</div>
-</div>
-<div id="footer"></div>
-
+<div id="container">
+		<div id="sidebar">
+			
+			<div id="navigation">
+			  <ul>
+				<li><a class="current" href="">Events</a></li>
+				  <ul id="sidebar_events_subheader">
+					<li class="current_subheader"><a href="">Popular</a></li>
+					<li><a href="events/today">Today</a></li>
+					<li><a href="events/tomorrow">Tomorrow</a></li>
+					<li><a href="events/recent">Recently added</a></li>
+				  </ul>
+				<li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>
+			        <li><%= form_tag search_events_path, :method => 'get' do %>
+  					<p>
+    					<span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
+    					<%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
+  					</p>
+					<% end %></li>		
+			  </ul>
+			</div>
+		</div>
+		<div class="page">
+		<div id="event_listings_container" class="event_listings">	
+			<ul>
+			
+			<%= render 'ind' %>
+				
+			</ul>
+		</div>
+			  
+		
+		
+		</div>
 
 

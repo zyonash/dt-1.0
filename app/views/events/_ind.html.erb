@@ -1,0 +1,13 @@
+			<% @events.each do |event| %>
+	
+			  <li class="event_listings_item">
+			  	<a class="event_listings_link" href="/events/<%= event.id %>">
+			  	  <ul>
+					<li class="event_name"><%= truncate(event.name, :length => 20, :separator => ' ', :omission => "...") %></li>
+					<li class="event_location"><%= truncate(event.location, :length => 20, :separator => ' ', :omission => "...") %></li>
+					<li class="event_datetime"><%= event.eventtime.strftime("%I:%M%p")%> on <%= event.eventdate.strftime("%m/%d/%Y") %></li>
+					<li class="event_description"><%= truncate(event.description, :length => 45, :separator => ' ', :omission => "...\n(read more)") %></li>
+			      </ul>
+			  	</a>
+		      </li>
+			<%end%>

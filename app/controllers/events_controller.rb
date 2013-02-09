@@ -1,16 +1,25 @@
 class EventsController < ApplicationController
  
  def index
-    @events = Event.page(params[:page]).per(5)
+    @events = Event.find(:all, :order => 'page_views DESC', :limit => 20, :conditions => ["DATE(eventdate) > ?", Date.today - 30])
 	   
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.erb popular events
       format.json { render :json => @events }
     end
   end
 
+  def search
+    @events = Event.search(params[:search])
+
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render :json => @events}
+    end
+  end
+
   def tomorrow
-    @events = Event.page(params[:page]).per(5)
+    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.tomorrow])).page(params[:page]).per(20)
     
     respond_to do |format|
       format.html # tomorrow.html.erb
@@ -18,11 +27,32 @@ class EventsController < ApplicationController
     end
   end
 
+  def recent
+    @events = Kaminari.paginate_array(Event.find(:all, :order => 'created_at DESC')).page(params[:page]).per(20)
+    
+    respond_to do |format|
+      format.html # recent.html.erb
+      format.json { render :json => @events}
+    end
+  end
+
+  def today
+    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(20)
+    
+    
+    respond_to do |format|
+      format.html # today.html.erb
+      format.json { render :json => @events}
+    end
+  end
+
   # GET /events/1
   # GET /events/1.json
   def show
+    
     @event = Event.find(params[:id])
-
+    @event.update_attribute(:page_views, @event.page_views + 1) 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @event }
@@ -33,7 +63,6 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @event }

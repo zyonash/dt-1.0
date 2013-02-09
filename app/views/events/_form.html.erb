@@ -10,16 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="new_event_wrapper">
+  <div class="new_event_name">
   <div class="field">
     <div class="event_label">
-    <%= f.label :name %>
+    <%= f.label "Event name" %>
     </div>
     <div class="event_field">
     <%= f.text_field :name %>
     </div>
   </div>
+  </div>
   <div class="field">
+  <div class="new_location_field">
     <div class="event_label">
     <%= f.label :location %>
     </div>
@@ -27,12 +30,21 @@
     <%= f.text_field :location %>
     </div>
   </div>
+  </div>
+  <div class="field">
+    <div class="event_label">
+    <%= f.label "Description" %>
+    </div>
+    <div class="event_field">
+    <%= f.text_area :description, :class => "event_description_input" %>
+    </div>
+  </div>
   <div class="field">
     <div class="event_label">
     <%= f.label "Date" %>
     </div>
     <div class="event_field">
-    <%= f.date_select :eventdate %>
+    <%= f.date_select :eventdate, :order => [:month, :day, :year] %>
     </div>
   </div>
   <div class="field">
@@ -40,10 +52,11 @@
     <%= f.label "Time" %>
     </div>
     <div class="event_field">
-    <%= f.time_select :eventtime, {:ampm => true} %>
+    <%= f.time_select :eventtime, {:ampm => true, :minute_step => 5} %>
     </div>
   </div> 
   <div class="actions">
-    <%= f.submit %>
+    <div class="event_submit"><%= f.submit %></div>
+  </div>
   </div>
 <% end %>

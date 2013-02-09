@@ -7,8 +7,8 @@
                                   <ul id="sidebar_events_subheader">
                                         <li><a href="/events">Popular</a></li>
                                         <li><a href="today">Today</a></li>
-                                        <li class="current_subheader"><a href="tomorrow">Tomorrow</a></li>
-                                        <li><a href="recent">Recently added</a></li>
+                                        <li><a href="tomorrow">Tomorrow</a></li>
+                                        <li><a class="current_subheader" href="recent">Recently added</a></li>
                                   </ul>
                                 <li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>
 				<li><%= form_tag search_events_path, :method => 'get' do %>
@@ -22,8 +22,13 @@
                 </div>
                 <div class="page">
                 <div id="event_listings_container" class="event_listings">
+			<% if @events.length == 1 %>
+			<div id="search_results">Your search returned <%= @events.length %> result:</div>
+			<% else %>
+			<div id="search_results">Your search returned <%= @events.length %> results:</div>
+			<% end %>
                         <ul>
-			<div id="more_events"><%= paginate @events, :id => "more_events" %></div>		 
+			<div id="more_events"></div>		 
 			<% @events.each do |event| %>
 
                           <li class="event_listings_item">
@@ -43,3 +48,4 @@
 			
 		</div>
 	</div>
+~                               

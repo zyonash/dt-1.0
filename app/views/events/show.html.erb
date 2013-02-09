@@ -1,49 +1,33 @@
-
-		
-		
-		<div id="section_nav">
-		  <ul>
-			<li class="current">Events</li>
-			<li>Notices</li>
-		  </ul>
-		</div>
-		
-		<div id="events_nav">
-		  <ul>	
-			<li> <a href="/events">Today</a></li>
-			<li><a href="/events/tomorrow">Tomorrow</a></li>
-			<li><a href="/events/popular">Popular</a></li>		
-			<li><a href="/events/recent">Recently Added</a></li>	
-		  </ul>
+<div id="container">
+		<div id="sidebar">
+			
+			<div id="navigation">
+			  <ul>
+				<li><a class="current" href="">Events</a></li>
+				  <ul id="sidebar_events_subheader">
+					<li class="current_subheader"><a href="">Popular</a></li>
+					<li><a href="events/today">Today</a></li>
+					<li><a href="events/tomorrow">Tomorrow</a></li>
+					<li><a href="events/recent">Recently added</a></li>
+				  </ul>
+				<li><%= link_to 'Post', new_event_path %></li>
+					
+			  </ul>
+			</div>
 		</div>
 		
 
 		<div id="events_info">
-			<h2 id="events_info_title">Spanish Club Meeting - First of the year!</h2>
-			<div id="events_info_datetime">January 1, 2013</div>
-			<div id="events_info_location">202 Cathedral of Learning</div>
-
-			<p id="description">Buenos dias! Come on down to the Cathedral for free tacos and salsa! We'll be introducing ourselves, our events, and everything that Spanish club is about. No habla Espanol? No problemo! </p>
-		
-		 <div id="events_info_bottom">	  
-			<div id="events_info_freefood"><strong>Free food?</strong> Yes</div>
-	        <div id="events_info_invited"><strong>Who's invited?</strong> Everyone!</strong></div>
-			<div id="events_info_postedat"><strong>This event is viewable by:</strong> Pitt, CMU, Chatham</div>
-		 </div>	
-
-						
+			<div id="events_info_title"><%= @event.name %> </div>
+			<div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
+			<div id="events_info_location"><%= @event.location %></div>
+			<p id="events_info_description"><%= @event.description %> </p>
+			<%= link_to 'Back to Events', events_path %>
+			<p>Page Views: <%= @event.page_views %></p>
 		</div>
 		
-		<div id="events_info_sidebar">
-		  <div id="rsvp_button">RSVP Button</div>
-		  <div id="share_buttons">Share buttons</div>
-		  <div id="map">Location of event on map</div>
-		  
-		</div>
-	
+			
 
 
 </div>
 
-</body>
-</html>

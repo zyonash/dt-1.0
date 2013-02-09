@@ -5,28 +5,19 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Dormtown - The college experience.</title>
-	<%= stylesheet_link_tag "school_style"%>
-	<%= javascript_include_tag 'application' %>	
+	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "school_style"%>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>	
 </head>
 <body>
 <div id="header">
-    <div id="top_nav">
-      <ul>
-        <li >[Logo]</li>
-	<li id="login"><%= current_user.email %>&nbsp;&nbsp;<%= link_to 'Sign Out', destroy_user_session_path %></li>
-      </ul>
-    </div>
+	  <ul>
+		<li id="logo"><%= image_tag "logo.png" %></li>
+		<li id="school_name">University of Pittsburgh</li>
+		<li>
+	  </ul>
 </div>
-<div id="wrapper">
-  <div id="content">
-    <div id="school_name">University of Pittsburgh</div>
-    <div id="search_post">
-      <ul>
-        <li><form><input id="search_bar" type="text" name="search" placeholder="Search"></form></li>
-        <li id="post_button"><%= link_to 'Post', new_event_path %></li>
-      </ul>	
-    </div>
-    <%= yield %>
+
+	<%= yield %>
 
 </body>
 </html>

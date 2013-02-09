@@ -2,10 +2,14 @@ Dt10::Application.routes.draw do
   resources :notices
 
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
- 
+
   resources :events do
     collection do
       get 'tomorrow'
+      get 'popular'
+      get 'recent'
+      get 'search'
+      get 'today'
     end
   end 
 

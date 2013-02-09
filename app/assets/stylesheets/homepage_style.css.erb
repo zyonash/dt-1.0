@@ -1,0 +1,157 @@
+
+body {
+	font-family: "Myriad Pro", Helvetica, sans-serif;
+	background-size: auto;
+	background-color: #111;
+	background-image:url(<%= image_path('background.JPG') %>);
+	background-repeat: no-repeat;
+	margin: 0 10em 0 auto;
+
+}
+
+
+#header {
+
+	margin-top: -1em;
+	background-color: #111;
+	height: 1.6em;
+	width: 115%;
+
+}
+
+
+
+
+/*LEFT SIDE - LOGO, TAGLINE, and ABOUT MESSAGE*/
+
+#logo {
+	margin:  5em 0 0 8em;
+}
+
+#tagline {
+	color: #E0E2E1;
+	margin: -3.7em 0 0 7.6em;
+	font-size: 2.6em;
+	border-radius: .7em;
+	padding: .5em .5em 0.2em .5em;
+	text-shadow: 2px 2px 2px #111;
+	min-width: 20em;
+
+}
+
+#about {
+	color: #E0E2E1;
+	margin: -1.8em 0 0 16.5em;
+	font-size: 1.25em;
+	min-width: 20em;
+	padding: .5em .5em 0.2em .5em;
+	text-shadow: 2px 2px 2px #111;
+}
+/*END LEFT SIDE*/
+
+
+/*RIGHT SIDE - LOGIN, REGISTER, and EMPLOYERS*/
+
+#content {
+
+  margin: 2em auto 0 31em;
+  padding: 0 ;
+}
+
+#students {
+	width: 13em;
+	background-color: #efefef;
+	padding: .2em 0.7em 1.5em 0.7em;
+
+	border-radius: .3em;
+	opacity: .9;
+	font-size: 1.4em;
+	background: -webkit-linear-gradient(top,#fff 0,#C4C4C4 100%);
+	background: -moz-linear-gradient(top,#fff 0,#ddd 100%);
+	background: -ms-linear-gradient(top,#fff 0,#ddd 100%);
+	background: -o-linear-gradient(top,#fff 0,#ddd 100%);
+	background: linear-gradient(top,#fff 0,#ddd 100%);
+}
+
+#students hr {
+	margin-top: -0.5em;
+}
+
+
+#search_bar  {
+	width: 98%;
+	font-size: 1em;
+}
+
+#footer {
+	margin: 13em 0 0em 27em;
+		text-shadow: 1px 2px 2px #111;
+}
+
+#footer ul li  {
+	display: inline;
+	color: #efefef;
+	padding-right: .7em;
+	clear: all;
+	margin: 0 auto 0 auto;
+}
+
+#footer a:link, a:visited {
+	color: #efefef;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #adadad;
+}
+
+
+#homepage_login {
+
+	margin-right: 1em;
+
+}
+
+#homepage_login_submit {
+	
+	float: right;
+}
+
+#homepage_login_password_bar {
+
+
+	background: transparent url(<%= image_path 'bg.jpg' %>) no-repeat;
+	color : #747862;	
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;
+	float: right;
+	margin-right: 0.2em;
+}
+
+#homepage_login_email_bar {
+
+
+	background: transparent url(<%= image_path 'bg.jpg' %>) no-repeat;
+	color : #747862;	
+	border:0;
+	padding: 4px 8px;
+	float: right;
+	margin-right: 0.2em;
+}
+
+
+#homepage_register_email_bar, #homepage_register_password_bar, #homepage_register_password_confirmation_bar {
+
+	width: 100%;	
+	
+}
+
+#homepage_register_submit {
+
+	
+	margin-top: 1em;
+	margin-bottom: -2em;
+	width: 100%;
+	height: 2em;
+}

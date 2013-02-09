@@ -1,25 +1,29 @@
-<div id="section_nav">
-  <ul>
-    <li class="current">Events</li>
-    <li>Notices</li>
-  </ul>
-</div>
-<div id="events_nav">
-  <ul>	
-    <li> <a href="/events">Today</a></li>
-    <li><a href="/events/tomorrow">Tomorrow</a></li>
-    <li><a href="events_popular.html">Popular</a></li>		
-    <li><a href="events_recent.html">Recently Added</a></li>	
-  </ul>
-</div>
-<div id="new_event">
+<div id="container">
+                <div id="sidebar">
+
+                        <div id="navigation">
+                          <ul>
+                                <li><a class="current" href="/events">Events</a></li>
+                                  <ul id="sidebar_events_subheader">
+                                        <li><a href="/events">Popular</a></li>
+                                        <li><a href="today">Today</a></li>
+                                        <li><a href="tomorrow">Tomorrow</a></li>
+                                        <li><a href="recent">Recently added</a></li>
+                                  </ul>
+                                <li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>
+                                <li><%= form_tag search_events_path, :method => 'get' do %>
+                                        <p>
+                                        <span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
+                                        <%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
+                                        </p>
+                                        <% end %></li>
+                          </ul>
+                        </div>
+                </div>
+
+
+<div id="new_event_form">
 <%= render 'form' %>
-</div>
-<div id="back_to_events">
-<%= link_to 'Back to Events', events_path %>
-</div>
-</div>
-<div id="footer">Footer</div>
 </div>
 
 

@@ -1,4 +1,13 @@
 class Event < ActiveRecord::Base
-  attr_accessible :location, :name, :eventdate, :eventtime
-  default_scope order("created_at DESC")
+  attr_accessible :page_views, :description, :location, :name, :eventdate, :eventtime
+
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end
