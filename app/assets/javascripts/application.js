@@ -15,6 +15,3 @@
 //= require_tree .
 
 
-$(function () {
-	$('#article_published_on').datepicker();
-});
