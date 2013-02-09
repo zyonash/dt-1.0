@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
  
  def index
-    @events = Event.find(:all, :order => 'page_views DESC', :limit => 20, :conditions => ["DATE(eventdate) > ?", Date.today - 30])
+    @events = Event.find(:all, :order => 'page_views DESC', :limit => 20, :conditions => ["DATE(eventdate) = ?", Date.today - 30])
 	   
     respond_to do |format|
       format.html # index.html.erb popular events
