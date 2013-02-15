@@ -6,9 +6,9 @@
 				<li><a class="current" href="">Events</a></li>
 				  <ul id="sidebar_events_subheader">
 					<li class="current_subheader"><a href="">Popular</a></li>
-					<li><a href="events/today">Today</a></li>
-					<li><a href="events/tomorrow">Tomorrow</a></li>
-					<li><a href="events/recent">Recently added</a></li>
+					<li><a href="../events/today">Today</a></li>
+					<li><a href="../events/tomorrow">Tomorrow</a></li>
+					<li><a href="../events/recent">Recently added</a></li>
 				  </ul>
 				<li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>
 			        <li><%= form_tag search_events_path, :method => 'get' do %>
@@ -22,6 +22,7 @@
 		</div>
 		<div class="page">
 		<div id="event_listings_container" class="event_listings">	
+			<h2 id="page_heading">Popular Events</h2>
 			<ul>
 			
 			<%= render 'ind' %>

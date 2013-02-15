@@ -10,8 +10,13 @@
 					<li><a href="events/tomorrow">Tomorrow</a></li>
 					<li><a href="events/recent">Recently added</a></li>
 				  </ul>
-				<li><%= link_to 'Post', new_event_path %></li>
-					
+				 <li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>	
+				<li><%= form_tag search_events_path, :method => 'get' do %>
+  					<p>
+    					<span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
+    					<%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
+  					</p>
+					<% end %></li>		
 			  </ul>
 			</div>
 		</div>
@@ -22,9 +27,9 @@
 			<div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
 			<div id="events_info_location"><%= @event.location %></div>
 			<p id="events_info_description"><%= @event.description %> </p>
-			<%= link_to 'Back to Events', events_path %>
+			<%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
 		</div>
-		
+			
 			
 
 

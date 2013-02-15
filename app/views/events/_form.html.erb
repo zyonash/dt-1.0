@@ -11,50 +11,69 @@
     </div>
   <% end %>
   <div class="new_event_wrapper">
-  <div class="new_event_name">
+  <div class="new_event_name_wrapper">
   <div class="field">
     <div class="event_label">
+    <div class="new_event_name">
     <%= f.label "Event name" %>
     </div>
+    </div>
     <div class="event_field">
+    <div class="new_event_name_field">
     <%= f.text_field :name %>
     </div>
+    </div>
   </div>
   </div>
+  <div class="new_event_location_wrapper">
   <div class="field">
-  <div class="new_location_field">
     <div class="event_label">
+    <div class="new_event_location">
     <%= f.label :location %>
     </div>
+    </div>
     <div class="event_field">
+    <div class="new_event_location_field">
     <%= f.text_field :location %>
     </div>
-  </div>
-  </div>
-  <div class="field">
-    <div class="event_label">
-    <%= f.label "Description" %>
-    </div>
-    <div class="event_field">
-    <%= f.text_area :description, :class => "event_description_input" %>
     </div>
   </div>
+  </div>
+  <div class="new_event_date_wrapper">
   <div class="field">
     <div class="event_label">
+    <div class="new_event_date">
     <%= f.label "Date" %>
+    </div>
     </div>
     <div class="event_field">
     <%= f.date_select :eventdate, :order => [:month, :day, :year] %>
     </div>
   </div>
+  </div>
+  <div class="new_event_time_wrapper">
   <div class="field">
     <div class="event_label">
+    <div class="new_event_time">
     <%= f.label "Time" %>
+    </div>
     </div>
     <div class="event_field">
     <%= f.time_select :eventtime, {:ampm => true, :minute_step => 5} %>
     </div>
-  </div> 
+  </div>
+  </div>
+  <div class="field">
+    <div class="event_label">
+    <div class="new_event_description">
+    <%= f.label "Description" %>
+    </div>
+    </div>
+    <div class="event_field">
+    <%= f.text_area :description, :class => "new_event_description_field" %>
+    </div>
+  </div>
+   
   <div class="actions">
     <div class="event_submit"><%= f.submit %></div>
   </div>
