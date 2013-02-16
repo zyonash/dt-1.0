@@ -59,7 +59,8 @@ Dt10::Application.configure do
     :user_name => "contact@dormtown.com",
     :password => "mynameisurl99",
     :authentication => "plain",
-    :enable_starttls_auto => true }
+    :enable_starttls_auto => true 
+    :host => "dormtown.heroku.com"	}
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
