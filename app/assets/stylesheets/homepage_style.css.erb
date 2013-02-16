@@ -1,51 +1,57 @@
 
 body {
 	font-family: "Myriad Pro", Helvetica, sans-serif;
-	background-size: auto;
 	background-color: #111;
-	background-image:url(<%= image_path('background.JPG') %>);
 	background-repeat: no-repeat;
 	margin: 0 10em 0 auto;
-
+	overflow: hidden;	
 }
 
 
 #header {
 
+	box-shadow: 0 0 10px rgba(1,1,1,.5);
 	margin-top: -1em;
-	background-color: #111;
+	background-color: #EEE;
 	height: 1.6em;
 	width: 115%;
+	display: block;
 
 }
 
 
+#top {
 
+	z-index: 1;
+}
 
 /*LEFT SIDE - LOGO, TAGLINE, and ABOUT MESSAGE*/
 
 #logo {
+	z-index: 1;
 	margin:  5em 0 0 8em;
 }
 
 #tagline {
-	color: #E0E2E1;
+	z-index: 1;
+	color: #eee;
 	margin: -3.7em 0 0 7.6em;
 	font-size: 2.6em;
 	border-radius: .7em;
 	padding: .5em .5em 0.2em .5em;
-	text-shadow: 2px 2px 2px #111;
+	text-shadow: 1px 2px 2px #111;
 	min-width: 20em;
 
 }
 
 #about {
+	z-index: 1;
 	color: #E0E2E1;
 	margin: -1.8em 0 0 16.5em;
 	font-size: 1.25em;
 	min-width: 20em;
 	padding: .5em .5em 0.2em .5em;
-	text-shadow: 2px 2px 2px #111;
+	text-shadow: 1px 2px 2px #111;
 }
 /*END LEFT SIDE*/
 
@@ -53,19 +59,18 @@ body {
 /*RIGHT SIDE - LOGIN, REGISTER, and EMPLOYERS*/
 
 #content {
-
+  z-index: 1;
   margin: 2em auto 0 31em;
   padding: 0 ;
 }
 
 #students {
-	width: 13em;
+	width: 15em;
 	background-color: #efefef;
 	padding: .2em 0.7em 1.5em 0.7em;
-
 	border-radius: .3em;
 	opacity: .9;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	background: -webkit-linear-gradient(top,#fff 0,#C4C4C4 100%);
 	background: -moz-linear-gradient(top,#fff 0,#ddd 100%);
 	background: -ms-linear-gradient(top,#fff 0,#ddd 100%);

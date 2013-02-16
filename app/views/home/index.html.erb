@@ -1,3 +1,4 @@
+
 	<div id="header">
 		<div id="homepage_login">
 		<%= form_for("user", :url => user_session_path) do |f| %>
@@ -9,7 +10,8 @@
 	</div>
     
 
-   <div id="top">	
+   <div id="top">
+			
 	  <div id="logo">
 		<%= image_tag "logo_home.png" %>
 	  </div>
@@ -28,10 +30,6 @@
 
 	<p><strong>New to Dormtown?</strong> Sign up.</p>
 	<hr />
-
-      <form id="school_search">
-	    <input id="search_bar" type="text" name="search" placeholder="Find your school">
-	  </form>
 
 <%= form_for("user", :url => user_registration_path) do |f| %>
 
