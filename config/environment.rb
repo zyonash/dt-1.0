@@ -13,8 +13,9 @@ ActionMailer::Base.smtp_settings = {
     :user_name => "contact@dormtown.com",
     :password => "mynameisurl99",
     :authentication => "plain",
-    :enable_starttls_auto => true, 
-    :host => "dormtown.herokuapp.com"	}
+    :enable_starttls_auto => true  }
+
+ActionMailer::Base.default_url_options = { :host => "dormtown.herokuapp.com" }
 
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
