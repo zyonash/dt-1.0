@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search.downcase}%"])
+      find(:all, :conditions => ['name ILIKE ?', "%#{search}%"])
     else
       find(:all)
     end
