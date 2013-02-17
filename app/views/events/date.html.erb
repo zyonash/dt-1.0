@@ -1,0 +1,46 @@
+<div id="container">
+                <div id="sidebar">
+
+                        <div id="navigation">
+                          <ul>
+                                <li><a class="current" href="/events">Events</a></li>
+                                  <ul id="sidebar_events_subheader">
+                                        <li><a href="/events">Popular</a></li>
+                                        <li><a href="today">Today</a></li>
+                                        <li><a href="tomorrow">Tomorrow</a></li>
+                                        <li><a class="current_subheader" href="recent">Recently added</a></li>
+                                  </ul>
+                                <li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>
+				<li><%= form_tag search_events_path, :method => 'get' do %>
+  					<p>
+    					<span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
+    					<%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
+  					</p>
+					<% end %></li>
+                          </ul>
+                        </div>
+                </div>
+                <div class="page">
+                <div id="event_listings_container" class="event_listings">
+                        <ul>
+			<div id="more_events"></div>		 
+			<% @events.each do |event| %>
+
+                          <li class="event_listings_item">
+                                <a class="event_listings_link" href="/events/<%= event.id %>">
+                                  <ul>
+                                        <li class="event_name"><%= truncate(event.name, :length => 20, :separator => ' ', :omission => "...") %></li>
+                                        <li class="event_location"><%= truncate(event.location, :length => 20, :separator => ' ', :omission => "...") %></li>
+                                        <li class="event_datetime"><%= event.eventtime.strftime("%I:%M%p")%> on <%= event.eventdate.strftime("%m/%d/%Y") %></li>
+                                        <li class="event_description"><%= truncate(event.description, :length => 45, :separator => ' ', :omission => "...\n(read more)") %></li>
+                              </ul>
+                                </a>
+                      </li>
+			
+                        <%end%>
+			
+			</ul>
+			
+		</div>
+	</div>
+~                               
