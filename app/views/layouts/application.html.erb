@@ -13,7 +13,10 @@
 	  <ul>
 		<li id="logo"><%= image_tag "logo.png" %></li>
 		<li id="school_name">University of Pittsburgh</li>
-		
+		<% if user_signed_in? %><li id="user_account"><%= current_user.email %></li>
+		  <li id="sign_out"><%= link_to "Sign out", destroy_user_session_path %></li>
+		<% end %>
+			
 	  </ul>
 </div>
 

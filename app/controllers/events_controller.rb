@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+ before_filter :authenticate_user! 
  
  def index
     @events = Event.find(:all, :order => 'page_views DESC', :limit => 18, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today-30, Date.today])
