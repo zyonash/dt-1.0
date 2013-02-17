@@ -133,7 +133,7 @@ body a:visited {
 .event_listings_link {	
 
 	display: block;
-	height: 13em;
+	height: 9em;
 }
 .event_listings_item ul {
 	padding: 1.1em;
@@ -145,7 +145,7 @@ body a:visited {
 	padding: 0em;
 	border-radius: 8px;
 	width: 13.5em;
-	height: 9.5em;
+	height: 10em;
 	border: 1px solid #ddd;
 	color: #999;
 	word-wrap: break-word;
@@ -169,7 +169,7 @@ body a:visited {
 
 #event_listings_container a:link, #event_listings_container a:visited {
 	color: #333;
-	
+	outline: 0;
 	
 }
 
