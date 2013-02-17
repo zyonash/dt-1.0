@@ -10,6 +10,7 @@ Dt10::Application.routes.draw do
       get 'recent'
       get 'search'
       get 'today'
+      get 'date'
     end
   end 
 

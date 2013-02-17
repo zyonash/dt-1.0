@@ -16,7 +16,12 @@
     					<span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
     					<%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
   					</p>
-					<% end %></li>		
+					<% end %></li>
+				<li><%= form_tag date_events_path, :method => 'get' do %>
+					<%= select_date(Time.now, :order => [:month, :day, :year])  %>
+					<%= submit_tag "Filter Events by Date", :name => :nil, :class => "date_bar_button" %>
+				    <% end %></li>
+
 			  </ul>
 			</div>
 		</div>

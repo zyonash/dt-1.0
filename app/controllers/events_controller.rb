@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
  
  def index
-    @events = Event.find(:all, :order => 'page_views DESC', :limit => 20, :conditions => ["DATE(eventdate) = ?", Date.today - 30])
+    @events = Event.find(:all, :order => 'page_views DESC', :limit => 18, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today-30, Date.today])
 	   
     respond_to do |format|
       format.html # index.html.erb popular events
@@ -15,6 +15,16 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # search.html.erb
       format.json { render :json => @events}
+    end
+  end
+
+  def date
+
+    @events = Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.parse("#{params[:date]['day']}-#{params[:date]['month']}-#{params[:date]['year']}")])
+    
+    respond_to do |format|
+      format.html # date.html.erb
+      format.json { render :json => @events }
     end
   end
 
