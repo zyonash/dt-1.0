@@ -1,5 +1,10 @@
 <p>Welcome to DormTown, <%= @resource.email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Thanks for registering.  You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+<p>If the link isn't clickable, just copy and paste it into your address bar.</p>
+
+<p>Thanks!</p>
+<p>The Dormtown Team</p>
