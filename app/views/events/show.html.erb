@@ -27,6 +27,7 @@
 			<div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
 			<div id="events_info_location"><%= @event.location %></div>
 			<p id="events_info_description"><%= @event.description %> </p>
+			<p><%= @event.page_views %></p>
 			<%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
 		</div>
 			
