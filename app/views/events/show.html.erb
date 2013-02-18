@@ -27,7 +27,10 @@
 			<div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
 			<div id="events_info_location"><%= @event.location %></div>
 			<p id="events_info_description"><%= @event.description %> </p>
-			<p><%= @event.user.email %></p>
+			<% if @event.user.email == current_user.email %>
+			<%= link_to 'Delete', @event, :method => :delete, :id => "back_to_events" %>
+			<br>
+			<% end %>
 			<%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
 		</div>
 			

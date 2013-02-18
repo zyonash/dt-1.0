@@ -10,6 +10,6 @@ class Event < ActiveRecord::Base
     end
   end
 
-  belongs_to :user
+  belongs_to :user, :foreign_key => "user_id"
 
 end

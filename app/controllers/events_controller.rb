@@ -50,8 +50,7 @@ class EventsController < ApplicationController
 
   def today
     @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(20)
-    
-    
+     
     respond_to do |format|
       format.html # today.html.erb
       format.json { render :json => @events}
@@ -75,9 +74,8 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.user_id = current_user.id
-    @event.email = current_user.email
-    @event.save
+    @event.update_attribute(:user_id, current_user.id)
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @event }
@@ -126,9 +124,9 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-
+	
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to events_url, :notice => "Event successfully deleted." }
       format.json { head :no_content }
     end
   end

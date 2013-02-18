@@ -3,7 +3,6 @@ body {
 	font-family: "Myriad Pro", Helvetica, sans-serif;
 	background-size: 100%;
 	background-color: #ddd;
-	background-repeat: no-repeat;
 	margin: 0 10em 0 auto;
 }
 
@@ -54,6 +53,12 @@ body a:visited {
 
 }
 
+
+#user_account{
+
+	padding-left: 22em;
+
+}
 /*HEADER - END*/
 
 
@@ -262,7 +267,6 @@ body a:visited {
 	margin: 8.5em 2em 0 12.5em;
 	float: left;
 	padding: 1em 1.5em 1em 1.5em; 
-	min-height: 12em;
 }
 
 #events_info_title {
