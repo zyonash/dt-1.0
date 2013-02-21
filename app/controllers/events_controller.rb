@@ -124,7 +124,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-	
+    @event = nil	
     respond_to do |format|
       format.html { redirect_to events_url, :notice => "Event successfully deleted." }
       format.json { head :no_content }

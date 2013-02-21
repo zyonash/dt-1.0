@@ -28,7 +28,7 @@
 			<div id="events_info_location"><%= @event.location %></div>
 			<p id="events_info_description"><%= @event.description %> </p>
 			<% if @event.user.email == current_user.email %>
-			<%= link_to 'Delete', @event, :method => :delete, :id => "back_to_events" %>
+			<%= button_to "Delete", @event, :method => :delete, :confirm => "Are you sure? This event will be permanently deleted." %>
 			<br>
 			<% end %>
 			<%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
