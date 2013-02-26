@@ -1,14 +1,9 @@
-<div id="container">
 	
-		<div class="page">
-		<div id="event_listings_container" class="event_listings">	
-			
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => "basic_sign_in") do |f| %>
-			<div><%= f.label :email %><br />
-  			<%= f.email_field :email %></div>
-
-  			<div><%= f.label :password %><br />
-  			<%= f.password_field :password %></div>
+		        
+			<div id="basic_sign_in">	
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  			<%= f.email_field :email, :placeholder => "Email" %>
+  			<%= f.password_field :password, :placeholder => "Password" %>
 
   			<% if devise_mapping.rememberable? -%>
     			<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
@@ -19,13 +14,10 @@
 			
 			<div id="new_user_links">
 			<%= render "devise/shared/links" %></div>
-				
-		</div>
+			</div>	
 			  
+<div id="footer">Footer</div>		
 		
-		
-	</div>
-
 
 
 

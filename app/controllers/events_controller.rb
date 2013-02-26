@@ -3,7 +3,7 @@ class EventsController < ApplicationController
  before_filter :authenticate_user! 
  
  def index
-    @events = Event.find(:all, :order => 'page_views DESC', :limit => 18, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today-30, Date.today])
+    @events = Event.find(:all, :order => 'page_views DESC', :limit => 18, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today, Date.today + 30])
 	   
     respond_to do |format|
       format.html # index.html.erb popular events
@@ -74,8 +74,6 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.update_attribute(:user_id, current_user.id)
-    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @event }
@@ -94,6 +92,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        @event.update_attribute(:user_id, current_user.id)
         format.html { redirect_to @event, :notice => 'Event was successfully created.' }
         format.json { render :json => @event, :status => :created, :location => @event }
       else

@@ -5,22 +5,22 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Dormtown - What's happening at your campus?</title>
-	<%= stylesheet_link_tag "school_style" %>
-	<%= javascript_include_tag "application" %>
+	<%= stylesheet_link_tag "school_style", "normalize" %>
+	<%= javascript_include_tag "application", "jquery-1.9.1" %>
 	<%= csrf_meta_tag %>	
 </head>
 <body>
-<div id="header">
+	<div id="header">
 	  <ul>
-		<li id="logo"><%= image_tag "logo.png" %></li>
-		<li id="school_name">University of Pittsburgh</li>
-		<% if user_signed_in? %><li id="user_account"><%= current_user.email %>
-		  <%= link_to "Sign out", destroy_user_session_path %></li>
-		<% end %>
-			
+	    <li id="logo"><%= image_tag "logo.png" %></li>
 	  </ul>
-</div>
+	</div>
 
+	<div id="container">
+	  <div id="tagpost">
+	    <h1>What's happening on your campus?</h1>
+	    <div id="post_container"><%= link_to 'Post something', new_event_path, :id => "post"%></div>
+	  </div>		
 	<%= yield %>
 
 </body>

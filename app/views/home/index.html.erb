@@ -1,54 +1,41 @@
-
-	<div id="header">
-		<div id="homepage_login">
-		<%= form_for("user", :url => user_session_path) do |f| %>
-		<%= f.submit "Sign in", :id => "homepage_login_submit" %>
-		<%= f.password_field :password , :size=>'15', :maxlength=>'32', :placeholder => "Password", :tabindex => 2, :id => "homepage_login_password_bar" %>
-		<%= f.text_field :email , :size=>'15',:maxlength=>'32', :placeholder => "Email", :tabindex => 1, :id => "homepage_login_email_bar" %>
-        	<% end %>
-		</div>
-	</div>
+<div id="header">
+  <div id="homepage_login">
+    <%= form_for("user", :url => user_session_path) do |f| %>
+      <%= f.submit "Sign in", :id => "homepage_login_submit" %>
+      <%= f.password_field :password , :size=>'15', :maxlength=>'32', :placeholder => "Password", :tabindex => 2, :id => "homepage_login_password_bar" %>
+      <%= f.text_field :email , :size=>'15',:maxlength=>'32', :placeholder => "Email", :tabindex => 1, :id => "homepage_login_email_bar" %>
+    <% end %>
+  </div>
+</div>
     
 
-   <div id="top">
-			
-	  <div id="logo">
-		<%= image_tag "logo_home.png" %>
-	  </div>
-	  <h1 id="tagline">
-		What's happening on your campus?
-	  </h1>
-	  <div id="about">
-	    <p><strong>Dormtown</strong> is a bulletin board and event calendar <em>exclusive</em> to your university.</p>
-	  </div>
+<div id="top">
+  <div id="logo">
+    <%= image_tag "logo_home.png" %>
+  </div>
+  <h1 id="tagline">What's happening on your campus?</h1>
+  <div id="about">
+    <p><strong>Dormtown</strong> is a bulletin board and event calendar <em>exclusive</em> to your university.</p>
+  </div>
 </div>
 	
-
 <div id="content">
- 
-   <div id="students"> 
+  <div id="students"> 
+    <p><strong>New to Dormtown?</strong> Sign up.</p>
+    <hr />
+    <%= form_for("user", :url => user_registration_path) do |f| %>
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
 
-	<p><strong>New to Dormtown?</strong> Sign up.</p>
-	<hr />
+      <div><%= f.label :password %><br />
+      <%= f.password_field :password, :id => "homepage_register_password_bar" %></div>
 
-<%= form_for("user", :url => user_registration_path) do |f| %>
+      <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, :id => "homepage_register_password_confirmation_bar" %></div>
 
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password, :id => "homepage_register_password_bar" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, :id => "homepage_register_password_confirmation_bar" %></div>
-
-  <div><%= f.submit "Sign up", :id => "homepage_register_submit" %></div>
-<% end %>
-
-
-  </div>
-
+      <div><%= f.submit "Sign up", :id => "homepage_register_submit" %></div>
+    <% end %>
+</div>
 </div>
 
 <div id="footer">
@@ -58,10 +45,11 @@
 		<li><a href="">Blog</a></li>
 		<li><a href="">Terms</a></li>
 		<li><a href="">Privacy</a></li>
-		<li><a href="">Dormtown 2012©</a></li>					
+		<li><a href="">Dormtown 2012©</a></li>
+	</ul>
+</div>
 </div>
 
 
 
-</div>
 

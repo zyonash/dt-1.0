@@ -11,17 +11,35 @@
     </div>
   <% end %>
   <div class="new_event_wrapper">
+  <div class="new_event_datetime_wrapper">
+  <div class="field">
+    <div class="event_label">
+    <div class="new_event_date">
+    </div>
+    </div>
+    <div class="event_field">
+    <div class="new_event_date">
+    <%= f.date_select :eventdate, :order => [:month, :day, :year] %>
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="field">
+    <div class="event_field">
+    <div class="new_event_time">
+    <%= f.time_select :eventtime, {:ampm => true, :minute_step => 5} %>
+    </div>
+    </div>
+  </div>
+  </div>
   <div class="new_event_name_wrapper">
   <div class="field">
     <div class="event_label">
     <div class="new_event_name">
-    <%= f.label "Event name" %>
     </div>
     </div>
     <div class="event_field">
-    <div class="new_event_name_field">
-    <%= f.text_field :name %>
-    </div>
+    <%= f.text_field :name, :placeholder => "Name", :class => "new_event_name_field" %>
     </div>
   </div>
   </div>
@@ -29,53 +47,26 @@
   <div class="field">
     <div class="event_label">
     <div class="new_event_location">
-    <%= f.label :location %>
     </div>
     </div>
     <div class="event_field">
-    <div class="new_event_location_field">
-    <%= f.text_field :location %>
-    </div>
+    <%= f.text_field :location, :placeholder => "Where?", :class => "new_event_location_field" %>
     </div>
   </div>
   </div>
-  <div class="new_event_date_wrapper">
-  <div class="field">
-    <div class="event_label">
-    <div class="new_event_date">
-    <%= f.label "Date" %>
-    </div>
-    </div>
-    <div class="event_field">
-    <%= f.date_select :eventdate, :order => [:month, :day, :year] %>
-    </div>
-  </div>
-  </div>
-  <div class="new_event_time_wrapper">
-  <div class="field">
-    <div class="event_label">
-    <div class="new_event_time">
-    <%= f.label "Time" %>
-    </div>
-    </div>
-    <div class="event_field">
-    <%= f.time_select :eventtime, {:ampm => true, :minute_step => 5} %>
-    </div>
-  </div>
-  </div>
+  
   <div class="field">
     <div class="event_label">
     <div class="new_event_description">
-    <%= f.label "Description" %>
     </div>
     </div>
     <div class="event_field">
-    <%= f.text_area :description, :class => "new_event_description_field" %>
+    <%= f.text_area :description, :class => "new_event_description_field", :placeholder => "Description" %>
     </div>
   </div>
    
   <div class="actions">
-    <div class="event_submit"><%= f.submit %></div>
+    <%= f.submit "Post it", :class => "new_event_submit"  %>
   </div>
   </div>
 <% end %>

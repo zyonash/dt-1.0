@@ -1,41 +1,15 @@
-<div id="container">
-		<div id="sidebar">
-			
-			<div id="navigation">
-			  <ul>
-				<li><a class="current" href="../events">Events</a></li>
-				  <ul id="sidebar_events_subheader">
-					<li class="current_subheader"><a href="../events">Popular</a></li>
-					<li><a href="../events/today">Today</a></li>
-					<li><a href="../events/tomorrow">Tomorrow</a></li>
-					<li><a href="../events/recent">Recently added</a></li>
-				  </ul>
-				 <li><%= link_to 'Post an event', new_event_path, :id => "events_post_button" %></li>	
-				<li><%= form_tag search_events_path, :method => 'get' do %>
-  					<p>
-    					<span id="search"><%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
-    					<%= submit_tag "Search", :name => nil, :class => "search_bar_button" %></span>
-  					</p>
-					<% end %></li>		
-			  </ul>
-			</div>
-		</div>
-		
-
-		<div id="events_info">
-			<div id="events_info_title"><%= @event.name %> </div>
-			<div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
-			<div id="events_info_location"><%= @event.location %></div>
-			<p id="events_info_description"><%= @event.description %> </p>
-			<% if @event.user.email == current_user.email %>
-			<%= button_to "Delete", @event, :method => :delete, :confirm => "Are you sure? This event will be permanently deleted." %>
-			<br>
-			<% end %>
-			<%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
-		</div>
-			
-			
-
-
+<div id="events_info">
+  <div id="events_info_container">
+  <div id="events_info_title"><%= @event.name %> </div>
+  <div id="events_info_datetime"><%= @event.eventdate.strftime("%m/%d/%Y") %> at <%= @event.eventtime.strftime("%I:%M%p") %></div>
+  <div id="events_info_location"><%= @event.location %></div>
+  <p id="events_info_description"><%= @event.description %> </p>
+  <% if @event.user.email == current_user.email %>
+  <%= button_to "Delete", @event, :method => :delete, :confirm => "Are you sure? This event will be permanently deleted." %>
+  <br>
+  <% end %>
+  <%= link_to 'Back to Events', events_path, :id => "back_to_events" %>
+  </div>
+</div>
 </div>
 

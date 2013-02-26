@@ -1,21 +1,43 @@
 
 body {
+	min-height: 100em;
 	font-family: "Myriad Pro", Helvetica, sans-serif;
-	background-color: #111;
 	background-repeat: no-repeat;
-	margin: 0 10em 0 auto;
-	overflow: hidden;	
+	overflow: hidden;
+	font-family: "Myriad Pro", Helvetica, sans-serif;
+	background-size: 100%;
+	background-color: #72a2f7;
+	background-repeat: no-repeat;
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #72A2F7, #80acf9,  #D2E0F7);
+
+
+	background: -webkit-gradient(top, #72A2F7, #80acf9, #fff);
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #72A2F7, #80acf9, #fff);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #72A2F7, #80acf9, #fff);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #72A2F7, #80acf9, #fff);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #72A2F7, #80acf9, #fff);
 }
 
 
 #header {
 
+	margin-top: -1.0em;
 	box-shadow: 0 0 10px rgba(1,1,1,.5);
-	margin-top: -1em;
 	background-color: #EEE;
 	height: 1.6em;
-	width: 115%;
+	width: 105%;
 	display: block;
+	margin-left: -1em;
 
 }
 
@@ -29,13 +51,13 @@ body {
 
 #logo {
 	z-index: 1;
-	margin:  5em 0 0 8em;
+	margin: 5em 0 0 8em;
 }
 
 #tagline {
 	z-index: 1;
 	color: #eee;
-	margin: -3.7em 0 0 7.6em;
+	margin: -4.1em 0 0 7.6em;
 	font-size: 2.6em;
 	border-radius: .7em;
 	padding: .5em .5em 0.2em .5em;
@@ -59,13 +81,16 @@ body {
 /*RIGHT SIDE - LOGIN, REGISTER, and EMPLOYERS*/
 
 #content {
-  z-index: 1;
-  margin: 2em auto 0 31em;
-  padding: 0 ;
+
+
 }
 
 #students {
-	width: 15em;
+
+	position: relative;	
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
 	background-color: #efefef;
 	padding: .2em 0.7em 1.5em 0.7em;
 	border-radius: .3em;
@@ -82,27 +107,22 @@ body {
 	margin-top: -0.5em;
 }
 
-
-#search_bar  {
-	width: 98%;
-	font-size: 1em;
-}
-
 #footer {
-	margin: 13em 0 0em 27em;
-		text-shadow: 1px 2px 2px #111;
+
+	position: relative;
+	margin-left: 31%;
+	margin-right: auto;
+	margin-top: 3em;
 }
 
 #footer ul li  {
 	display: inline;
-	color: #efefef;
+	color: #000;
 	padding-right: .7em;
-	clear: all;
-	margin: 0 auto 0 auto;
 }
 
 #footer a:link, a:visited {
-	color: #efefef;
+	color: #000;
 	text-decoration: none;
 }
 
@@ -113,7 +133,7 @@ body {
 
 #homepage_login {
 
-	margin-right: 1em;
+	margin-right: 2.7em;
 
 }
 
