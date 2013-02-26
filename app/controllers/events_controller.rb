@@ -20,6 +20,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def please_confirm
+    render :layout => 'confirm'
+  end
+
   def date
 
     @events = Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.parse("#{params[:date]['day']}-#{params[:date]['month']}-#{params[:date]['year']}")])

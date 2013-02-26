@@ -11,8 +11,10 @@ Dt10::Application.routes.draw do
       get 'search'
       get 'today'
       get 'date'
+      get 'please_confirm'
     end
   end 
+
 
   get "home/index"    
   # The priority is based upon order of creation:

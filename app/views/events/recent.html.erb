@@ -3,8 +3,13 @@
     <li><a href="../events">Popular</a></li>
     <li><a href="../events/today">Today</a></li>
     <li><a href="../events/recent"><strong>New</strong></a></li>
+    <li><%= form_tag date_events_path, :method => 'get', :class => "date_form" do %>
+					<%= select_date(Time.now, :order => [:month, :day, :year])  %>
+					<%= submit_tag "Filter Events by Date", :name => :nil, :class => "date_bar_button" %>
+				    <% end %></li>
+
     <li><span id="search"><%= form_tag search_events_path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search for an event"  %>
+        <%= text_field_tag :search, params[:search], :class => "search_bar", :placeholder => "Search"  %>
         <% end %></span>
     </li>
 
