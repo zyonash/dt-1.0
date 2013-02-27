@@ -21,8 +21,8 @@
     <li class="event_listings_item">
     <a class="event_listings_item_link" href="/events/<%= event.id %>">
     <ul>
-      <li class="event_name"><%= truncate(event.name, :length => 20, :separator => ' ', :omission => "...") %></li>
-      <li class="event_location"><%= truncate(event.location, :length => 20, :separator => ' ', :omission => "...") %></li>
+      <li class="event_name"><%= truncate(event.name, :length => 32, :separator => ' ', :omission => "...") %></li>
+      <li class="event_location"><%= truncate(event.location, :length => 50, :separator => ' ', :omission => "...") %></li>
       <li class="event_datetime"><%= event.eventtime.strftime("%I:%M%p") %> on <%= event.eventdate.strftime("%m/%d/%Y") %></li>
       <li class="event_description"><%= truncate(event.description, :length => 153, :separator => ' ', :omission => "...\n") %></li>
     </ul>
