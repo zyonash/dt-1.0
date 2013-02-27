@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:search])
+    @events = Kaminari.paginate_array(Event.search(params[:search])).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # search.html.erb
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 
   def date
 
-    @events = Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.parse("#{params[:date]['day']}-#{params[:date]['month']}-#{params[:date]['year']}")])
+    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.parse("#{params[:date]['day']}-#{params[:date]['month']}-#{params[:date]['year']}")])).page(params[:page]).per(10)
     
     respond_to do |format|
       format.html # date.html.erb
