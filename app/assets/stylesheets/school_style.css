@@ -173,9 +173,10 @@ body a:visited {
 
 
 #event_listings_container {
-	margin: 2.5em auto 0 auto;
+	margin: 2.5em auto 4em auto;
 	width: 900px;
-	min-height: 40em;
+	min-height: 23em;
+	
 	padding: 0 0 0 0;
 	border-radius: 4px;
 	background-color: #fff;
