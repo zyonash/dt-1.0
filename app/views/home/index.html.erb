@@ -23,7 +23,7 @@
   <div id="students"> 
     <p><strong>New to Dormtown?</strong> Sign up.</p>
     <hr />
-    <%= form_for("user", :url => user_registration_path, :remote => true) do |f| %>
+    <%= form_for("user", :url => user_registration_path, :before => "afterSignup()") do |f| %>
       <div><%= f.label :email %><br />
       <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
 
@@ -33,7 +33,7 @@
       <div><%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, :id => "homepage_register_password_confirmation_bar" %></div>
 
-      <div><%= f.submit "Sign up", :id => "homepage_register_submit", :onclick => "afterSignup(); return true;" %></div>
+      <div><%= f.submit "Sign up", :id => "homepage_register_submit" %></div>
     <% end %>
 </div>
 </div>
