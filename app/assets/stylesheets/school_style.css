@@ -35,7 +35,19 @@ body a:visited {
 	color: #444;
 }
 	
-	
+#cloud1 {
+
+	z-index: 0;
+	margin: 0em 0 -17% 7%;
+
+}	
+
+#cloud2 {
+
+	z-index: 0;
+	margin: 0 0 -20% 83%;
+
+}
 
 /*BODY - END*/
 
@@ -344,16 +356,25 @@ body a:visited {
 	font-weight: bold;
 }
 
-#footer {
-	display: none;
-	height: 4em;
-	background-color: #000;
-	width: 115%;
-	color: #fff;
+#footer img{
+
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 101.35%;
+	height: 15em;
+	background-size: 100%;
+	margin: -0.5em 0 -1em -0.5em;
+	padding: 0;
 	clear: all;
-	margin-top: 50em;
+
 }
 
+#footer p{
+
+	margin: 0em 10em;
+
+}
 
 
 
