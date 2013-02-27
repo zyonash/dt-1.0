@@ -246,21 +246,19 @@ body a:visited {
 }
 
 .event_listings_item  {
-	height: 5em;
 	color: #222;
 	border-bottom: 1px solid #ddd;
-	padding-bottom: 1em;
-	margin-top: -1.2em;
+	height: 5.5em;
 }
 
 .event_listings_item a:link {	
+
 
 }
 
 .event_listings_item ul {
 
-	margin: 0;
-	padding: 0.5em 0.5em 0em 1.5em;
+	padding: 0.5em 1em 1em 1em;
 
 }
 .event_listings_item:hover {
