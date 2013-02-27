@@ -16,6 +16,7 @@
   </ul>
 		  
   <ul id="events">
+    <div id="pagination"><%= paginate @events %></div>
     <% @events.each do |event| %>
     <li class="event_listings_item">
     <a class="event_listings_item_link" href="/events/<%= event.id %>">

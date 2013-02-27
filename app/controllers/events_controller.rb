@@ -53,7 +53,7 @@ class EventsController < ApplicationController
   end
 
   def today
-    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(20)
+    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(1)
      
     respond_to do |format|
       format.html # today.html.erb
