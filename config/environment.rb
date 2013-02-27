@@ -20,4 +20,4 @@ ActionMailer::Base.default_url_options = { :host => "dormtown.com" }
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
 
-
+Devise::SessionsController.layout "devise"

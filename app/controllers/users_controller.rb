@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-def show
+layout 'confirm'
 
-  @user = User.find(params[:id]);
+def sign_in
 
 end
 
