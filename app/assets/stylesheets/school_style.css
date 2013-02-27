@@ -282,16 +282,20 @@ background: -o-linear-gradient(top, #fff, #C2DBFF);
 }
 
 .event_name { 
-	font-size: 1.1em;
+	font-size: 1.2em;
 	font-weight: bold;
 	margin-right: 10em;
 }
 
 .event_location {
+
+	font-size: .95em;
+
 }
 
 .event_datetime {
 
+	font-size: .95em;
 
 }
 
@@ -299,6 +303,7 @@ background: -o-linear-gradient(top, #fff, #C2DBFF);
 .event_description {
 	margin: -4em 5em 0 22em;
 	width: 25em;
+	font-size: .95em;
 		
 }
 
