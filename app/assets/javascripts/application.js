@@ -14,8 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 
-function confirm(){
-
-	alert("Thanks for registering! Please check your University email inbox to confirm your account.");
-
-}
