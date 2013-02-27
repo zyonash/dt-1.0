@@ -193,6 +193,21 @@ body a:visited {
 	border-radius: 4px;
 	background-color: #fff;
 	position: relative;
+
+background: -webkit-gradient(top, #fff, #C2DBFF);
+
+/* Safari 5.1, Chrome 10+ */
+background: -webkit-linear-gradient(top, #fff, #C2DBFF);
+
+
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #fff, #C2DBFF);
+
+/* IE 10 */
+background: -ms-linear-gradient(top, #fff, #C2DBFF);
+
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #fff, #C2DBFF);
 }
 
 .date_form {
@@ -262,7 +277,7 @@ body a:visited {
 
 }
 .event_listings_item:hover {
-	background-color: #eee;
+	background-color: #fff;
 
 }
 
