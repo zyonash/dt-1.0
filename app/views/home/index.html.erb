@@ -23,7 +23,7 @@
   <div id="students"> 
     <p><strong>New to Dormtown?</strong> Sign up.</p>
     <hr />
-    <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup()' } ) do |f| %>
+    <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup(); return true;' } ) do |f| %>
       <div><%= f.label :email %><br />
       <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
 
