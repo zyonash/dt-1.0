@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Dormtown - What's happening at your campus?</title>
+	<%= stylesheet_link_tag "school_style", "normalize" %>
+	<%= javascript_include_tag "application", "jquery-1.9.1" %>
+	<%= csrf_meta_tag %>	
+</head>
+<body>
+	<div id="header">
+	  <ul>
+	    <li id="logo"><%= link_to (image_tag "logo.png"), events_url %></li>
+               
+	  </ul>
+	</div>
+
+	<div id="container">
+	  <div id="tagpost">
+	    <h1>Please log in to continue to Dormtown.</h1>
+	  </div>		
+	<%= yield %>
+
+</body>
+</html>
