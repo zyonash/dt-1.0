@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+	<%= redirect_to events_url %>
+<% end %>
+
 <div id="header">
   <div id="homepage_login">
     <%= form_for("user", :url => user_session_path) do |f| %>
