@@ -2,7 +2,7 @@
 
 <p>Thanks for registering.  You can confirm your account email through the link below:</p>
 
-<p><%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><a href="http://dormtown.com/users/confirmation?confirmation_token=<%=@resource.confirmation_token%>"></p>
 
 <p>If the link isn't clickable, just copy and paste it into your address bar.</p>
 
