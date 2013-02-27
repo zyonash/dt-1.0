@@ -3,7 +3,7 @@ class EventsController < ApplicationController
  before_filter :authenticate_user! 
  
  def index
-    @events = Event.find(:all, :order => 'page_views DESC', :limit => 18, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today, Date.today + 30])
+    @events = Event.find(:all, :order => 'page_views DESC', :limit => 10, :conditions => ["DATE(eventdate) BETWEEN ? AND ?", Date.today, Date.today + 30])
 	   
     respond_to do |format|
       format.html # index.html.erb popular events
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   end
 
   def recent
-    @events = Kaminari.paginate_array(Event.find(:all, :order => 'created_at DESC')).page(params[:page]).per(20)
+    @events = Kaminari.paginate_array(Event.find(:all, :order => 'created_at DESC')).page(params[:page]).per(10)
     
     respond_to do |format|
       format.html # recent.html.erb
@@ -53,7 +53,7 @@ class EventsController < ApplicationController
   end
 
   def today
-    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(1)
+    @events = Kaminari.paginate_array(Event.find(:all, :conditions => ["DATE(eventdate) = ?", Date.today])).page(params[:page]).per(10)
      
     respond_to do |format|
       format.html # today.html.erb
