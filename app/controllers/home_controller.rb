@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   layout 'home_layout'
 
   def index
-    if user_logged_in?
+    if current_user
       redirect_to events_url
     end
   end
