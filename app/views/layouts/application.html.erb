@@ -9,13 +9,27 @@
 	<%= javascript_include_tag "application", "jquery-1.9.1" %>
 	<%= csrf_meta_tag %>	
 	<%= favicon_link_tag 'favicon.ico' %>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38877340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 	<div id="header">
 	  <ul>
 	    <li id="logo"><%= link_to (image_tag "logo.png"), events_url %></li>
             <% if user_signed_in? %>
-	    <li id="user_account"><div id="user_account_move"><%= current_user.email %><%= link_to "Sign out", destroy_user_session_path, :id => "user_account_signout" %></div></li>
+	    <li id="user_account"><%= current_user.email %><%= link_to "Sign out", destroy_user_session_path, :id => "user_account_signout" %></li>
             <% end %>   
 	  </ul>
 	</div>

@@ -1,8 +1,8 @@
 <div id="event_listings_container" class="event_listings">	
   <ul id="navmenu">
     <li><a href="../events">Popular</a></li>
-    <li><a href="../events/today">Today</a></li>
     <li><a href="../events/recent">New</a></li>
+    <li><a href="../events/today">Today</a></li>
     <li><%= form_tag date_events_path, :method => 'get', :class => "date_form" do %>
 					<%= select_date(Time.now, :order => [:month, :day, :year])  %>
 					<%= submit_tag "Filter Events by Date", :name => :nil, :class => "date_bar_button" %>
@@ -15,9 +15,9 @@
 
   </ul>
 		  
+  <div id="pagination"><%= paginate @events %></div>
+  <% @events.each do |event| %>
   <ul id="events">
-    <% @events.each do |event| %>
-    <div id="pagination"><%= paginate @events %></div>
     <li class="event_listings_item">
     <a class="event_listings_item_link" href="/events/<%= event.id %>">
     <ul>
