@@ -9,46 +9,34 @@
   </div>
 </div>
     
-
-<div id="top">
-  <div id="logo">
-    <%= image_tag "logo_home.png" %>
-  </div>
-  <h1 id="tagline">What's happening on your campus?</h1>
-  <div id="about">
-    <p><strong>Dormtown</strong> is a bulletin board and event calendar <em>exclusive</em> to your university.</p>
-  </div>
-</div>
-	
 <div id="content">
-  <div id="students"> 
-    <p><strong>New to Dormtown?</strong> Sign up.</p>
-    <hr />
-    <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup(); return true;' } ) do |f| %>
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
+  <div id="pitch">
+    <h3>What's happening on your campus?</h3>
+      <p id="tagline">One website. &nbsp;Every event imaginable.</p>
+      <ul id="description">
+      <li></li>
+      <li>Create and broadcast your own events. Find new clubs, study groups and activities. Exclusively for your university.</li>
+      <li><strong>Only on Dormtown.</strong></li>
+      </p>
 
-      <div><%= f.label :password %><br />
-      <%= f.password_field :password, :id => "homepage_register_password_bar" %></div>
+      <div id="students">
+        <p><strong>New to Dormtown?</strong> Sign up.</p>
+        <hr />
+        <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup(); return true;' } ) do |f| %>
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
+          <div><%= f.label :password %><br />
+          <%= f.password_field :password, :id => "homepage_register_password_bar" %></div>
 
-      <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, :id => "homepage_register_password_confirmation_bar" %></div>
+          <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :id => "homepage_register_password_confirmation_bar" %></div>
 
-      <div><%= f.submit "Sign up", :id => "homepage_register_submit" %></div>
-    <% end %>
+          <div><%= f.submit "Sign up", :id => "homepage_register_submit" %></div>
+          <% end %>
+      </div>
+    </div>
 </div>
-</div>
 
-<div id="footer">
-	<ul>
-		<li><a href="">About</a></li>
-		<li><a href="">Help</a></li>			
-		<li><a href="">Blog</a></li>
-		<li><a href="">Terms</a></li>
-		<li><a href="">Privacy</a></li>
-		<li><a href="">Dormtown 2012©</a></li>
-	</ul>
-</div>
 </div>
 
 
