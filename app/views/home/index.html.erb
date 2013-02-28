@@ -11,7 +11,7 @@
     
 <div id="content">
   <div id="pitch">
-    <h3>What's happening on your campus?</h3>
+    <h3>What's happening at your campus?</h3>
       <p id="tagline">One website. &nbsp;Every event imaginable.</p>
       <ul id="description">
       <li></li>
@@ -20,10 +20,10 @@
       </p>
 
       <div id="students">
-        <p><strong>New to Dormtown?</strong> Sign up.</p>
+        <p><strong>New to Dormtown?</strong> Sign up with a valid pitt.edu email address.</p>
         <hr />
         <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup(); return true;' } ) do |f| %>
-          <div><%= f.label :email %><br />
+          <div><%= f.label 'University email' %><br />
           <%= f.email_field :email, :id => "homepage_register_email_bar" %></div>
           <div><%= f.label :password %><br />
           <%= f.password_field :password, :id => "homepage_register_password_bar" %></div>
