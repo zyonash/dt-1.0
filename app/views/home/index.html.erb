@@ -8,10 +8,12 @@
     <% end %>
   </div>
 </div>
-    
+  
+<div id="logo_home"><%= image_tag 'logo_home.png' %></div>
+
 <div id="content">
   <div id="pitch">
-    <h3>What's happening at your campus?</h3>
+    <h3>What's happening on your campus?</h3>
       <p id="tagline">One website. &nbsp;Every event imaginable.</p>
       <ul id="description">
       <li></li>
@@ -20,7 +22,7 @@
       </p>
 
       <div id="students">
-        <p><strong>New to Dormtown?</strong> Sign up with a valid pitt.edu email address.</p>
+        <p><strong>New to Dormtown?</strong> Sign up with a valid Pitt.edu email address.</p>
         <hr />
         <%= form_for("user", :url => user_registration_path, :html => { :onsubmit => 'afterSignup(); return true;' } ) do |f| %>
           <div><%= f.label 'University email' %><br />
