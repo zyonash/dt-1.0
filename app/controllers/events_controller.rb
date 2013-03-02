@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   end
 
   def recent
-    @events = Kaminari.paginate_array(Event.find(:all, :order => 'created_at DESC', :conditions => ["DATE(eventdate) > ?", Date.yesterday])).page(params[:page]).per(10)
+    @events = Kaminari.paginate_array(Event.find(:all, :order => 'created_at DESC', :conditions => ["DATE(eventdate) > ?", Date.today-1])).page(params[:page]).per(10)
     
     respond_to do |format|
       format.html # recent.html.erb
